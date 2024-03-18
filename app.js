@@ -1,3 +1,9 @@
+/**
+ * dotenv gives us access to private variables held in a .env file
+ * never expose this .env file publicly
+ */
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');

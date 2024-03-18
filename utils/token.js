@@ -2,7 +2,6 @@ const axios = require('axios');
 const qs = require('query-string');
 
 const { ZOOM_OAUTH_ENDPOINT } = require('../constants');
-const { ZOOM_ACCOUNT_ID, ZOOM_CLIENT_ID, ZOOM_CLIENT_SECRET }= require('../constants');
 const redis = require('../configs/redis');
 
 /**
@@ -12,11 +11,11 @@ const redis = require('../configs/redis');
   */
 const getToken = async () => {
 
-  console.log('Parameter 0:', ZOOM_OAUTH_ENDPOINT);
-  console.log('Parameter 1:', ZOOM_ACCOUNT_ID, 'Parameter 2:', ZOOM_CLIENT_ID, 'Parameter 3:', ZOOM_CLIENT_SECRET);
-
   try {
-   // const { ZOOM_ACCOUNT_ID, ZOOM_CLIENT_ID, ZOOM_CLIENT_SECRET } = process.env;
+    const { ZOOM_ACCOUNT_ID, ZOOM_CLIENT_ID, ZOOM_CLIENT_SECRET } = process.env;
+
+    console.log('Parameter 0:', ZOOM_OAUTH_ENDPOINT);
+    console.log('Parameter 1:', ZOOM_ACCOUNT_ID, 'Parameter 2:', ZOOM_CLIENT_ID, 'Parameter 3:', ZOOM_CLIENT_SECRET);
 
     const request = await axios.post(
       ZOOM_OAUTH_ENDPOINT,
