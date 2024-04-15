@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  form(action='/getMeetingInstances', method='GET')
+    input(type="text" name="meetingId" placeholder="Meeting ID")
+    button(type="submit") Get Meeting Instances
+
+
+
+

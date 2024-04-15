@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Meeting Instances
+    form(action='/getParticipants', method='GET')
+      input(type="text" name="meetingId" placeholder="Meeting ID or UUID")
+      button(type="submit") Get Participants Info
+  p Total Instances : #{numInstances}
+  ul
+    each instance in meetings
+      li
+        strong UUID: #{instance.uuid}
+        |  - 
+        span Start Time: #{instance.start_time}
+           

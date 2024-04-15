@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Participants Info
+  p Total Participants: #{numParticipants}
+  ul
+    each participant in participants
+      li
+        strong Name: #{participant.name}
+        |  - 
+        span Email: #{participant.user_email}
+        |  - 
+        span Join Time: #{participant.join_time}
+        |  - 
+        span Leave Time: #{participant.leave_time}
+           
